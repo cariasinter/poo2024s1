@@ -2,72 +2,101 @@ package cr.tec.poo.ejemplos;
 
 public class Televisor {
 
-    int canalActual;
-    int volumenActual;
-    boolean encendido;
+    private static int numeroTelevisores = 0;
+
+    private int canalActual;
+    private int volumenActual;
+    private boolean encendido;
+
+    public int getCanalActual() {
+        return canalActual;
+    }
+
+    public int getVolumenActual() {
+        return volumenActual;
+    }
+
+    public boolean isEncendido() {
+        return encendido;
+    }
 
     public Televisor() {
         canalActual = 7;
         volumenActual = 10;
         encendido = false;
+        numeroTelevisores++;
     };
 
-    void encender() {
+    public void encender() {
         encendido = true;
+        sintonizar();
     };
 
-    void apagar() {
+    public void apagar() {
         encendido = false;
     };
 
-    void cambiarEstadoEncendido() {
-        encendido = !encendido;
-    };
-
-    void subirVolumen() {
+    public void subirVolumen() {
         if (volumenActual < 10)
             volumenActual++;
     }
 
-    void bajarVolumen() {
+    public void bajarVolumen() {
         if (volumenActual > 0)
             volumenActual--;
     }
 
-    void irACanal(int canal) {
+    public void irACanal(int canal) {
         if (canal > 0 && canal < 101) {
             this.canalActual = canal;
+            sintonizar();
         }
     }
 
-    void siguienteCanal() {
+    private void sintonizar() {
+        System.out.println("Sintonizando el canal " + canalActual);
+        System.out.println("..." );
+        System.out.println("sintonizado!" );
+    }
+
+    public void siguienteCanal() {
         irACanal(canalActual + 1);
     }
 
-    void anteriorCanal() {
+    public void anteriorCanal() {
         irACanal(canalActual - 1);
     }
 
-    public static void main(String[] args) {
-        Televisor tv1 = new Televisor();
-        Televisor tv2 = new Televisor();
-        Televisor tv3 = tv1;
-
-        tv1.encender();
-        tv1.irACanal(1);
-        System.out.println(tv1.canalActual);
-        tv3.siguienteCanal();
-        System.out.println(tv1.canalActual);
-
-        Televisor tv4 = null;
-
-        // Null Pointer Exception!!
-        System.out.println(tv4.canalActual);
-
-        tv2 = tv1;
+    public static void imprimirInformacion() {
+        System.out.println(numeroTelevisores + " tvs creados");
+        // System.out.println(getCanalActual()); Error!!
 
     }
 
+    @Override
+    public String toString() {
+        this.canalActual = 5;
+        return "Televisor{" +
+                "canalActual=" + canalActual +
+                ", volumenActual=" + volumenActual +
+                ", encendido=" + encendido +
+                '}';
+    }
 
+    public static void main(String[] args) {
+        this.canalActual = 5;
+        System.out.println(Televisor.numeroTelevisores);
+        int canalActual = (new Televisor()).canalActual;
+
+
+
+
+        System.out.println(canalActual);
+        Televisor tv = new Televisor();
+        System.out.println(Televisor.numeroTelevisores);
+
+        Televisor.imprimirInformacion();
+
+    }
 
 }
