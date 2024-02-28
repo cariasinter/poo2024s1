@@ -54,6 +54,8 @@ public class Televisor {
     }
 
     private void sintonizar() {
+        // Fuentes:
+        // Antena-Analogica, Antena-Digital, Cable
         System.out.println("Sintonizando el canal " + canalActual);
         System.out.println("..." );
         System.out.println("sintonizado!" );
@@ -75,7 +77,6 @@ public class Televisor {
 
     @Override
     public String toString() {
-        this.canalActual = 5;
         return "Televisor{" +
                 "canalActual=" + canalActual +
                 ", volumenActual=" + volumenActual +
@@ -84,7 +85,6 @@ public class Televisor {
     }
 
     public static void main(String[] args) {
-        this.canalActual = 5;
         System.out.println(Televisor.numeroTelevisores);
         int canalActual = (new Televisor()).canalActual;
 
