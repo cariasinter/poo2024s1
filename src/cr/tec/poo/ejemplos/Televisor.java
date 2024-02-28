@@ -1,8 +1,11 @@
 package cr.tec.poo.ejemplos;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Televisor {
 
-    private static int numeroTelevisores = 0;
+    private static int numeroTelevisores;
 
     private int canalActual;
     private int volumenActual;
@@ -21,11 +24,20 @@ public class Televisor {
     }
 
     public Televisor() {
-        canalActual = 7;
-        volumenActual = 10;
+        this(7);
+    };
+
+    public Televisor(int canalInicial) {
+        this(canalInicial, 10);
+    }
+
+    public Televisor(int canalInicial, int volumenInicial) {
+        canalActual = canalInicial;
+        volumenActual = volumenInicial;
         encendido = false;
         numeroTelevisores++;
-    };
+    }
+
 
     public void encender() {
         encendido = true;
@@ -37,8 +49,13 @@ public class Televisor {
     };
 
     public void subirVolumen() {
-        if (volumenActual < 10)
-            volumenActual++;
+        subirVolumen(1);
+    }
+
+    public void subirVolumen(int paso) {
+        if (volumenActual + paso < 100) {
+            volumenActual += paso;
+        }
     }
 
     public void bajarVolumen() {
@@ -54,10 +71,10 @@ public class Televisor {
     }
 
     private void sintonizar() {
-        // Fuentes:
-        // Antena-Analogica, Antena-Digital, Cable
+        List fuentes = Arrays.asList("Antena-Analogica", "Antena-Digital", "Cable");
+
         System.out.println("Sintonizando el canal " + canalActual);
-        System.out.println("..." );
+        fuentes.forEach((i) -> System.out.println("Probando en..."  + i) );
         System.out.println("sintonizado!" );
     }
 
