@@ -3,7 +3,7 @@ package cr.tec.poo.ejemplos;
 import java.util.Arrays;
 import java.util.List;
 
-public class Televisor {
+public class Televisor implements Cloneable{
 
     private static int numeroTelevisores;
 
@@ -90,6 +90,11 @@ public class Televisor {
         System.out.println(numeroTelevisores + " tvs creados");
         // System.out.println(getCanalActual()); Error!!
 
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 
     @Override
