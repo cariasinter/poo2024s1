@@ -3,9 +3,14 @@ package cr.tec.poo.ejemplos.ocultamientoinformacion;
 public class PruebaMiJardin {
 
     public static void main(String[] args) {
-        MiJardin j = new MiJardin("turqueza");
-        j.solicitarVisita();
+        MiJardin j = new MiJardin("turquesa");
         j.observar();
-        j.finalizarVisita();
+        boolean puedoObservar = j.solicitarVisita();
+        if (puedoObservar) {
+            j.observar();
+            j.finalizarVisita();
+        } else {
+            System.out.println("No me dejaron :(");
+        }
     }
 }

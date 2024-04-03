@@ -39,11 +39,18 @@ public class Triangulo extends FiguraGeometrica {
 	
 	@Override
 	public boolean equals(Object arg0) {
+		if (arg0 == null) {
+			return false;
+		}
+
+		if (!(arg0 instanceof Triangulo)) {
+			return false;
+		}
 		
 		// Implementacion de la logica de comparacion de objetos:
 		// Se determina que dos triangulos son iguales si tienen la 
 		// misma base y altura
-		return (this.getBase() == ((Triangulo) arg0).getBase() 
+		return (this.getBase() == ((Triangulo) arg0).getBase()
 				&& this.getAltura() == ((Triangulo) arg0).getAltura());
 		
 	}

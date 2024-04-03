@@ -13,6 +13,9 @@ public class ComparadorDeTriangulos {
 		Triangulo t2 = new Triangulo(10,2);
 		Triangulo t3 = t1;
 		Triangulo t4 = new Triangulo(10,3);
+
+
+
 		// Rectangulo r = new Rectangulo(10, 2); ClassCastException!
 		
 		if (t1 == t3) {
@@ -35,10 +38,13 @@ public class ComparadorDeTriangulos {
 		if (t1.equals(t4)) {
 			System.out.println("t1 t4 equals");
 		}
-		
-		/*if (t1.equals(r)) {
-			System.out.println("t1 r equals");
-		}*/
+
+		Triangulo t5 = new Triangulo();
+		Triangulo t6 = new Triangulo("rojo", "blanco", 10, 5);
+		if (t5.equals(t6)) {
+			System.out.println("t5 t6 equals");
+		}
+
 	}
 
 }

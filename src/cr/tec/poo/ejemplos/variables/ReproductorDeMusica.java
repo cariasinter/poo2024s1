@@ -6,6 +6,7 @@ public class ReproductorDeMusica {
     // Variables a nivel de clase y que no se pueden modificar,
     // cumplen la función de ser "constantes"
     public static final int VOLUMEN_MAXIMO = 10;
+
     public static final int VOLUMEN_MINIMO = 0;
     public static final int VOLUMEN_POR_DEFECTO = 6;
 
