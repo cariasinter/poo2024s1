@@ -12,12 +12,14 @@ public class PruebaLaPerla {
         Cliente linda = new Cliente("002", "Linda McCartney");
         Cliente brian = new Cliente("003", "Brian Epstein");
 
-        Producto p1 = new Producto("JRY101", 200, "Pendientes de diamantes");
+        // Productos
+        Producto p1 = new Producto("JRY101", 200, "Pendientes de diamantes muy bonitos para lucir en toda ocasion");
         Producto p2 = new Producto("JRY102", 150, "Anillo de plata zirconia");
         Producto p3 = new Producto("JRY103", 103, "Collar de perlas de oro");
         Producto p4 = new Producto("JRY104", 250, "Pulsera de oro de eslabones");
         Producto p5 = new Producto("JRY105", 300, "Conjunto de plata circonita");
 
+        // Facturas
         Factura f1 = new Factura(yoko);
         f1.agregarLinea(2, p1);
         f1.agregarLinea(1, p3);

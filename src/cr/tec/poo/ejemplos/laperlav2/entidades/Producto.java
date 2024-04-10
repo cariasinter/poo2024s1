@@ -30,4 +30,7 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
+    public void setPrecioUnitario(float precioUnitario) {
+        this.precioUnitario = precioUnitario;
+    }
 }
